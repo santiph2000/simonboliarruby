@@ -1,0 +1,23 @@
+<div id=banner>
+  <%= image_tag("bannerof.jpg" , :style => "width:100%")%>
+</div>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="border-top: 4px solid red;">
+    <ul class="nav navbar-nav clearfix">
+      <li class="nav-item">
+        <button class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </li>
+    </ul>
+    <a class="navbar-brand">
+    </a>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarText">
+      <ul class="nav navbar-nav">
+        <%= render 'layouts/navregistro_links' %>
+      </ul>
+      <ul class="nav navbar-nav">
+      </ul>
+    </div>
+  </nav>
+</div>

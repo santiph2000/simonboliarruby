@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "I.E Simon Bolivar" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "I.E Simon Bolivar" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <%= render 'layouts/navigation' %>
+</header>
+
+<div id="myModal" class="modal fade col-4 offset-4 mt-5" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title ml-auto">Iniciar Sesión</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <%= form_tag do %>
+        <div class="modal-body container p-4">
+          <div class="form-group">
+            <%= label_tag(:usuario, "Usuario") %>
+            <%= text_field_tag(:usuario, nil, placeholder: "Ingrese el usuario", class: 'form-control') %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag(:password, "Contraseña") %>
+            <%= password_field_tag(:password, nil, placeholder: "Ingrese su contraseña", class: 'form-control') %>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="col-12 text-center">
+            <div class="form-check mb-2">
+              <%= check_box_tag(:remember, nil, false, { class: 'form-check-input' }) %>
+              <%= label_tag(:remember, "Recuérdame", class: 'form-check-label') %>
+            </div>
+
+            <div class="form-group">
+              <%= submit_tag("Iniciar Sesión", class: 'btn btn-primary') %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="full-reset"
+     style="height: 100%; background-color: rgba(255, 255, 255, .6); padding: 60px 0;">
+  <h1 class="text-center titles">Principios</h1>
+  <figure class="Logo-Ins-Index">
+    <img src="imagenes/logo.jpg" alt="Logo" class="img-responsive">
+  </figure>
+  <p class="lead text-center">"La formación en la I.E. Simón
+    Bolívar de Itagüí está basada en los principios del derecho a: la
+    vida, la libertad con responsabilidad y la propiedad como resultado
+    de la individualidad y la dignidad, el autogobierno y el carácter,
+    contribuyendo a una educación con calidad humana y comprometida con
+    el cambio social."</p>
+</div>
+<div class="divider-general"></div>
+<div class="container">
+  <h2 class="text-center titles">Eventos de la institución</h2>
+  <br> <br>
+  <section class="full-reset"
+           style="background-color: rgb(242, 242, 242); padding: 40px 0;">
+    <div class="container">
+      <h2 class="text-center titles">Eventos de la institución</h2>
+      <br> <br>
+      <!--======================================== Carrusel ========================================-->
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-push-6">
+          <h3 class="text-center titles">Fotos Eventos</h3>
+          <p class="lead">
+            Algunos de nuestros eventos en la institucion, tales como el
+            proyecto del dia libre, semana de la literatura y el lenguaje y
+            posecion del gobierno escolar. <a
+            href="http://ins-sensunte.net/imagenes/espacio_ins/Flash01/index.html"
+            class="open-link-newTab">Has click aqui para ver las fotos</a>
+          </p>
+          <i class="fa fa-picture-o icon-index hidden-xs hidden-sm"></i>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-sm-pull-6">
+          <div id="slider-ins" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+            <ol class="carousel-indicators">
+              <li data-target="#slider-ins" data-slide-to="0" class="active"></li>
+              <li data-target="#slider-ins" data-slide-to="1"></li>
+              <li data-target="#slider-ins" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Imagenes -->
+            <div class="carousel-inner" role="listbox">
+
+              <!-- Primera imagen -->
+              <div class="item active">
+                <img src="imagenes/1.jpg" alt="Default">
+                <div class="carousel-caption">Proyecto del dia libre</div>
+              </div>
+
+              <!-- Segunda imagen -->
+              <div class="item">
+                <img src="imagenes/2.jpg" alt="Default">
+                <div class="carousel-caption">Semana del lenguaje y la
+                  literatura</div>
+              </div>
+
+              <!-- Tercera imagen -->
+              <div class="item">
+                <img src="imagenes/3.png" alt="Default">
+                <div class="carousel-caption">Posesion del gobierno
+                  escolar</div>
+              </div>
+
+            </div>
+
+            <!-- Controles -->
+            <a class="left carousel-control" href="#slider-ins" role="button"
+               data-slide="prev"> <span
+              class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a> <a class="right carousel-control" href="#slider-ins"
+                    role="button" data-slide="next"> <span
+            class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="divider-general"></div>
+    <br>
+    <!--======================================== Video ========================================-->
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="text-center titles">Himno Escolar</h3>
+        <p class="lead">
+          El himno fue establecido mediante concurso en noviembre de 1997 y
+          fue adoptado legalmente por la Institución Educativa en 2003.<br>
+          Letra: Julián Andrés Montoya A.<br> Música: Maribel Escobar P
+        </p>
+        <i class="fa fa-film icon-index hidden-xs hidden-sm"></i>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <video controls>
+          <source src="video/himno.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+</div>
+</section>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<%= render 'layouts/footer' %>
+
+</html>
